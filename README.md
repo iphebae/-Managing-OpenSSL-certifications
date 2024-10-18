@@ -7,8 +7,10 @@ STEPS
  run ls to verify the creation of the file
  show the certification : cat corp.iphebae.com.key
   extract public key : openssl rsa -in corp.iphebae.com.key -pubout -out corp.iphebae.com_public.key
+
  Generate a certificate signing request : openssl req -new -key corp.gomycode.com.key -out corp.iphebae.com.csr
  verify the certificate request : openssl req -text -in corp.iphebae.com.csr -noout -verify 
 generate a self-signed certificate :  openssl req -newkey rsa:2048 -nodes -keyout corp.iphebae.com.key -x509 -days 365 -out corp.iphebae.com.crt
 convert the keys format : openssl pkcs12 -export -name "corp.iphebae.com" -out corp.iphebae.com.pfx -inkey corp.iphebae.com.key -in corp.iphebae.com.crt
 
+[MANAGING OPENSSL_  creating  and managing OpenSSL certifications.pdf](https://github.com/user-attachments/files/17435001/MANAGING.OPENSSL_.creating.and.managing.OpenSSL.certifications.pdf)
